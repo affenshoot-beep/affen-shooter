@@ -5,11 +5,12 @@
     <link rel="icon" href="/affen-shooter/favicon.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOOTER</title>
-    <script type="module" crossorigin src="/affen-shooter/assets/main-D2u5nR0S.js"></script>
-    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/asset-url-DCDnKdQc.js">
-    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/shade-CyiKnLAc.js">
-    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/harbor-Dyxha_5y.js">
-    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-BA2TzlGr.css">
+    <style>html,body{color:#f4efe6;background:#100e0c;margin:0}</style>
+    <script type="module" crossorigin src="/affen-shooter/assets/main-CU69HGks.js"></script>
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/asset-url-CtJ2UxfO.js">
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/shade-CCs1YKqO.js">
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/harbor-Wj3YLK7L.js">
+    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-fgDTEEC5.css">
   </head>
   <body>
     <canvas id="view"></canvas>
@@ -44,6 +45,9 @@
       <button id="open-binds" type="button" class="ghost">Tastenbelegung</button>
       <label class="pause-vol">Lautstärke SFX
 <input id="sfx-volume" type="range" min="0" max="100" value="55" />
+</label>
+<label class="pause-vol touch-only">Umsehen (Touch)
+<input id="look-sens" type="range" min="40" max="250" value="100" />
 </label>
 <div class="pause-actions">
         <button id="resume" type="button">Weiter</button>
@@ -119,13 +123,13 @@
       <div id="stick" class="stick" aria-label="Bewegen"><div id="stick-knob"></div></div>
       <div id="lookpad" aria-label="Umsehen"></div>
       <div class="touch-buttons">
-        <button type="button" data-act="fire-left">Schießen L</button>
-        <button type="button" data-act="fire-right">Schlagen R</button>
-        <button type="button" data-act="use">Aufheben</button>
-        <button type="button" data-act="jump">Springen</button>
-        <button type="button" data-act="crouch">Ducken</button>
-        <button type="button" data-act="swap">Waffe wechseln</button>
-        <button type="button" data-act="aim">Zielen</button>
+        <button type="button" class="tb tb-fire" data-act="fire-left" aria-label="Schießen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg></button>
+        <button type="button" class="tb tb-punch" data-act="fire-right" aria-label="Schlagen"><span class="tb-emoji">👊</span></button>
+        <button type="button" class="tb tb-use" data-act="use" aria-label="Aufheben"><span class="tb-emoji">✋</span></button>
+        <button type="button" class="tb tb-jump" data-act="jump" aria-label="Springen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        <button type="button" class="tb tb-crouch" data-act="crouch" aria-label="Ducken"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M6 4l6 6 6-6" opacity="0.5"/></svg></button>
+        <button type="button" class="tb tb-swap" data-act="swap" aria-label="Waffe wechseln"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg></button>
+        <button type="button" class="tb tb-aim" data-act="aim" aria-label="Zielen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg></button>
       </div>
     </div>
 
@@ -139,7 +143,16 @@
 
     <div id="designer" hidden></div>
 
+    <div id="fatal" class="fatal" hidden>
+      <div>
+        <p class="eyebrow">Grafik</p>
+        <h2 id="fatal-title">3D geht hier nicht</h2>
+        <p id="fatal-text">Dein Browser hat kein WebGL. Nimm Chrome, Edge oder Firefox und schalte die Hardware-Beschleunigung ein.</p>
+        <button id="fatal-reload" type="button">Neu laden</button>
+      </div>
+    </div>
+
     <video id="tv-video" playsinline loop muted preload="auto" src="/affen-shooter/assets/video/flower.mp4"></video>
-
+
   </body>
 </html>
