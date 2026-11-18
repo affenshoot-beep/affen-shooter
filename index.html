@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/affen-shooter/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOOTER</title>
+    <script type="module" crossorigin src="/affen-shooter/assets/main-D2u5nR0S.js"></script>
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/asset-url-DCDnKdQc.js">
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/shade-CyiKnLAc.js">
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/harbor-Dyxha_5y.js">
+    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-BA2TzlGr.css">
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+
+    <div id="veil" class="veil">
+      <div class="panel">
+        <p class="eyebrow" id="eyebrow">Wohnung · 1. Stock</p>
+        <h1>SHOOTER</h1>
+        <p class="lead" id="lead">Kühlschrank, Tresor, dann die Wanne.</p>
+        <button id="play" type="button" disabled>Wird geladen</button>
+        <button id="fresh" type="button" class="ghost" hidden>Von vorn</button>
+        <button id="open-designer" type="button" class="ghost">Figuren-Designer</button>
+        <div class="bar" aria-hidden="true"><span id="bar"></span></div>
+        <p class="fine" id="fine">Möbel, Licht und Waffen werden geladen.</p>
+      </div>
+    </div>
+
+    <div id="pause" class="pause" hidden>
+      <p>Pause</p>
+      <p class="grade-label">Grafik</p>
+      <div class="grade" id="grade">
+        <button type="button" data-grade="niedrig">Niedrig</button>
+        <button type="button" data-grade="mittel">Mittel</button>
+        <button type="button" data-grade="hoch">Hoch</button>
+      </div>
+      <p class="grade-label">Bot-Mitspieler</p>
+      <div class="grade" id="buddy-toggle">
+        <button type="button" data-buddy="an">An</button>
+        <button type="button" data-buddy="aus">Aus</button>
+      </div>
+      <button id="tutorial" type="button" class="ghost">Tutorial</button>
+      <button id="open-binds" type="button" class="ghost">Tastenbelegung</button>
+      <label class="pause-vol">Lautstärke SFX
+<input id="sfx-volume" type="range" min="0" max="100" value="55" />
+</label>
+<div class="pause-actions">
+        <button id="resume" type="button">Weiter</button>
+        <button id="save-slot" type="button" class="ghost">Speichern</button>
+        <button id="restart" type="button" class="ghost">Von vorn</button>
+      </div>
+    </div>
+
+    <div id="binds" class="binds" hidden>
+      <p>Tastenbelegung</p>
+      <p class="binds-note">Klick auf Aktion, dann Taste oder Maustaste. Konflikte werden gemeldet. Keine Strg/Alt-Kombos — Edge Strg+E öffnet Bing (Browser, nicht Spiel).</p>
+      <div id="binds-list" class="binds-list"></div>
+      <p id="binds-warn" class="binds-warn" hidden></p>
+      <div class="pause-actions">
+        <button id="binds-reset" type="button" class="ghost">Standard</button>
+        <button id="binds-close" type="button">Zurück</button>
+      </div>
+    </div>
+
+    <div id="armory" class="armory" hidden>
+      <div class="panel armory-panel">
+        <p class="eyebrow">Test · F9</p>
+        <h2>Nicht in der Wohnung</h2>
+        <p class="fine">Diese fünf sind gebaut, aber nicht verteilt. Später Laden oder Fund.</p>
+        <div id="armory-list"></div>
+        <button id="armory-close" type="button">Schließen</button>
+      </div>
+    </div>
+
+    <div id="hud" hidden>
+      <div class="life" aria-label="Leben"><i id="life"></i></div>
+      <div class="currency">
+        <span>Bananen <b id="coins">0</b></span>
+        <span>Edelsteine <b id="gems">0</b></span>
+      </div>
+      <div id="frame-ms" class="frame-ms" aria-hidden="true">— ms</div>
+      <div id="perf-break" class="perf-break" aria-hidden="true"></div>
+      <p id="tip" hidden>Kühlschrank</p>
+      <div class="weapon-readout">
+        <div id="weapon-name">Unbewaffnet</div>
+        <div id="ammo" hidden>
+          <span class="ammo-mag"><b id="ammo-mag">0</b><small>Magazin</small></span>
+          <span class="ammo-sep" aria-hidden="true">|</span>
+          <span class="ammo-reserve"><b id="ammo-reserve">0</b><small>Reserve</small></span>
+        </div>
+        <div id="reload" hidden>
+          <span id="reload-label">Nachladen…</span>
+          <span class="reload-track" aria-hidden="true"><i id="reload-bar"></i></span>
+        </div>
+      </div>
+      <p class="hint">WASD · Maus · Feststelltaste Sprint · Shift Ducken halten · C Ducken Toggle · X Rutschen · Sprint+X Slide · Strg Kriechen (liegend) · E Aufheben · R Nachladen</p>
+    </div>
+
+    <div id="hurt"></div>
+
+    <div id="prompt" hidden></div>
+
+    <div id="cross" hidden>
+      <span class="v u"></span>
+      <span class="v d"></span>
+      <span class="h l"></span>
+      <span class="h r"></span>
+    </div>
+
+    <div id="scope" hidden>
+      <div class="scope-glass"></div>
+      <div class="reticle"></div>
+    </div>
+
+    <div id="hitmark" hidden></div>
+
+    <div id="touch" hidden>
+      <div id="stick" class="stick" aria-label="Bewegen"><div id="stick-knob"></div></div>
+      <div id="lookpad" aria-label="Umsehen"></div>
+      <div class="touch-buttons">
+        <button type="button" data-act="fire-left">Schießen L</button>
+        <button type="button" data-act="fire-right">Schlagen R</button>
+        <button type="button" data-act="use">Aufheben</button>
+        <button type="button" data-act="jump">Springen</button>
+        <button type="button" data-act="crouch">Ducken</button>
+        <button type="button" data-act="swap">Waffe wechseln</button>
+        <button type="button" data-act="aim">Zielen</button>
+      </div>
+    </div>
+
+    <div id="turn" hidden>
+      <div>
+        <p class="eyebrow">Querformat</p>
+        <h2>Dreh das Telefon quer</h2>
+        <p>Die Wohnung spielt im Querformat.</p>
+      </div>
+    </div>
+
+    <div id="designer" hidden></div>
+
+    <video id="tv-video" playsinline loop muted preload="auto" src="/affen-shooter/assets/video/flower.mp4"></video>
+
+  </body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "waran": {
+    "tris": 14000,
+    "step": 0
+  },
+  "waran-mobile": {
+    "tris": 5600,
+    "step": 0
+  },
+  "gecko": {
+    "tris": 11000,
+    "step": 0
+  },
+  "gecko-mobile": {
+    "tris": 4200,
+    "step": 0
+  },
+  "flyer": {
+    "tris": 4463,
+    "step": 0
+  },
+  "flyer-mobile": {
+    "tris": 2387,
+    "step": 0
+  },
+  "ape": {
+    "tris": 14000,
+    "step": 0
+  },
+  "ape-body": {
+    "tris": 11652,
+    "step": 0.016
+  },
+  "ape-mobile": {
+    "tris": 5200,
+    "step": 0
+  },
+  "couch": {
+    "tris": 5792,
+    "step": 0.016
+  },
+  "bed": {
+    "tris": 9164,
+    "step": 0.016
+  },
+  "locker": {
+    "tris": 11362,
+    "step": 0.014
+  },
+  "locker-door": {
+    "tris": 4124,
+    "step": 0.012
+  },
+  "fridge": {
+    "tris": 5864,
+    "step": 0.016
+  },
+  "fridge-door": {
+    "tris": 2324,
+    "step": 0.014
+  },
+  "tub": {
+    "tris": 7086,
+    "step": 0.014
+  },
+  "counter": {
+    "tris": 5564,
+    "step": 0.014
+  },
+  "tv-stand": {
+    "tris": 3896,
+    "step": 0.014
+  },
+  "ore": {
+    "tris": 1944,
+    "step": 0.005
+  },
+  "apple": {
+    "tris": 1292,
+    "step": 0.004
+  },
+  "peel-banana": {
+    "tris": 302,
+    "step": 0.003
+  },
+  "peel-apple": {
+    "tris": 266,
+    "step": 0.0025
+  }
+}
