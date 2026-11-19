@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOOTER</title>
     <style>html,body{color:#f4efe6;background:#100e0c;margin:0}</style>
-    <script type="module" crossorigin src="/affen-shooter/assets/main-CU69HGks.js"></script>
+    <script type="module" crossorigin src="/affen-shooter/assets/main-DN1Dbl-a.js"></script>
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/asset-url-CtJ2UxfO.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/shade-CCs1YKqO.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/harbor-Wj3YLK7L.js">
-    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-fgDTEEC5.css">
+    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-ImAB7HEk.css">
   </head>
   <body>
     <canvas id="view"></canvas>
@@ -101,6 +101,8 @@
       <p class="hint">WASD · Maus · Feststelltaste Sprint · Shift Ducken halten · C Ducken Toggle · X Rutschen · Sprint+X Slide · Strg Kriechen (liegend) · E Aufheben · R Nachladen</p>
     </div>
 
+    <div id="rounds" hidden></div>
+    <div id="banner" hidden></div>
     <div id="hurt"></div>
 
     <div id="prompt" hidden></div>
@@ -130,6 +132,21 @@
         <button type="button" class="tb tb-crouch" data-act="crouch" aria-label="Ducken"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M6 4l6 6 6-6" opacity="0.5"/></svg></button>
         <button type="button" class="tb tb-swap" data-act="swap" aria-label="Waffe wechseln"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg></button>
         <button type="button" class="tb tb-aim" data-act="aim" aria-label="Zielen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg></button>
+      </div>
+    </div>
+
+    <div id="endscreen" class="endscreen" hidden>
+      <div class="end-card">
+        <p class="eyebrow">Straße · 5 Wellen</p>
+        <h2 id="end-title">Sieg!</h2>
+        <dl class="end-stats">
+          <div><dt>Welle</dt><dd id="end-wave">1/5</dd></div>
+          <div><dt>Echsen</dt><dd id="end-kills">0</dd></div>
+          <div><dt>Zeit</dt><dd id="end-time">0:00</dd></div>
+          <div><dt>Punkte</dt><dd id="end-score">0</dd></div>
+        </dl>
+        <p class="end-best" id="end-best"></p>
+        <button id="end-restart" type="button">Neustart</button>
       </div>
     </div>
 
