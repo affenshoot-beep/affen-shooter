@@ -188,7 +188,7 @@
       ],
       "min": [
         -0.23707397282123566,
-        0.00005296462768455967,
+        5.296462768455967e-05,
         -0.23707395792007446
       ],
       "type": "VEC3"
@@ -248,35 +248,35 @@
     {
       "bufferView": 8,
       "componentType": 5126,
-      "count": 34606,
+      "count": 118,
       "max": [
         0.3351912200450897,
         0.02323356457054615,
-        0.33649539947509766
+        0.3381587602198124
       ],
       "min": [
         -0.07898939400911331,
         -0.020643368363380432,
-        -0.0743584930896759
+        -0.07602185383439064
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 9,
       "componentType": 5126,
-      "count": 34606,
+      "count": 118,
       "type": "VEC3"
     },
     {
       "bufferView": 10,
       "componentType": 5126,
-      "count": 34606,
+      "count": 118,
       "type": "VEC2"
     },
     {
       "bufferView": 11,
       "componentType": 5123,
-      "count": 161790,
+      "count": 336,
       "type": "SCALAR"
     }
   ],
@@ -323,23 +323,23 @@
     },
     {
       "buffer": 0,
-      "byteLength": 415272,
+      "byteLength": 1416,
       "byteOffset": 421272
     },
     {
       "buffer": 0,
-      "byteLength": 415272,
-      "byteOffset": 836544
+      "byteLength": 1416,
+      "byteOffset": 422688
     },
     {
       "buffer": 0,
-      "byteLength": 276848,
-      "byteOffset": 1251816
+      "byteLength": 944,
+      "byteOffset": 424104
     },
     {
       "buffer": 0,
-      "byteLength": 323580,
-      "byteOffset": 1528664
+      "byteLength": 672,
+      "byteOffset": 425048
     }
   ],
   "samplers": [
@@ -350,7 +350,7 @@
   ],
   "buffers": [
     {
-      "byteLength": 1852244,
+      "byteLength": 425720,
       "uri": "potted_plant_02.bin"
     }
   ]
