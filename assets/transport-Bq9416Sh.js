@@ -1,0 +1,1 @@
+var e=class extends Error{kind;constructor(e,t){super(t??e),this.kind=e}};export{e as t};

@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOOTER</title>
     <style>html,body{color:#f4efe6;background:#100e0c;margin:0}</style>
-    <script type="module" crossorigin src="/affen-shooter/assets/main-DQiynN-1.js"></script>
+    <script type="module" crossorigin src="/affen-shooter/assets/main-BXa3hTMu.js"></script>
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/modulepreload-polyfill-P2Xu9kJm.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/asset-url-bvvzosUn.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/content-afEudqUg.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/binds-CA8v3LOX.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/design-nVDkrFzM.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/pose-C3abxNC5.js">
-    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-BdFF75dr.css">
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/transport-Bq9416Sh.js">
+    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-BFNgyWiz.css">
   </head>
   <body>
     <canvas id="view"></canvas>
@@ -25,6 +26,17 @@
         <p class="lead" id="lead">Kühlschrank, Tresor, dann die Wanne.</p>
         <button id="play" type="button" disabled>Wird geladen</button>
         <button id="fresh" type="button" class="ghost" hidden>Von vorn</button>
+        <button id="coop-create" type="button" class="ghost" disabled>Koop-Raum erstellen</button>
+        <div id="coop-box" class="coop-box" hidden>
+          <p class="coop-title" id="coop-title">Koop</p>
+          <input id="coop-name" type="text" maxlength="14" placeholder="Dein Name" autocomplete="nickname" />
+          <input id="coop-link" type="text" readonly />
+          <div class="coop-row">
+            <button id="coop-copy" type="button" class="ghost">Link kopieren</button>
+            <button id="coop-share" type="button" class="ghost" hidden>Teilen</button>
+          </div>
+          <p class="coop-status" id="coop-status"></p>
+        </div>
         <button id="open-designer" type="button" class="ghost">Figuren-Designer</button>
         <div class="bar" aria-hidden="true"><span id="bar"></span></div>
         <p class="fine" id="fine">Möbel, Licht und Waffen werden geladen.</p>
@@ -105,6 +117,8 @@
     </div>
 
     <div id="rounds" hidden></div>
+    <div id="coop-hud" hidden></div>
+    <div id="coop-note" hidden></div>
     <div id="banner" hidden></div>
     <div id="hurt"></div>
 
