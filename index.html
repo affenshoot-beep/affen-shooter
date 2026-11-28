@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/affen-shooter/favicon.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/affen-shooter/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/affen-shooter/icon-180.png" />
+    <meta name="theme-color" content="#100e0c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SHOOTER" />
     <title>SHOOTER</title>
     <style>html,body{color:#f4efe6;background:#100e0c;margin:0}</style>
-    <script type="module" crossorigin src="/affen-shooter/assets/main-DH-RrQgy.js"></script>
+    <script type="module" crossorigin src="/affen-shooter/assets/main-tOAoEuZp.js"></script>
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/modulepreload-polyfill-P2Xu9kJm.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/asset-url-bvvzosUn.js">
-    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/content-DjJSfy9B.js">
-    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/binds-DtBNiktR.js">
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/content-qYE6MajM.js">
+    <link rel="modulepreload" crossorigin href="/affen-shooter/assets/binds-Dm2gQywO.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/design-nVDkrFzM.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/pose-C3abxNC5.js">
     <link rel="modulepreload" crossorigin href="/affen-shooter/assets/transport-Bq9416Sh.js">
-    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-ubnkkDPa.css">
+    <link rel="stylesheet" crossorigin href="/affen-shooter/assets/main-KdqmRVCR.css">
   </head>
   <body>
     <canvas id="view"></canvas>
@@ -37,6 +44,8 @@
           </div>
           <p class="coop-status" id="coop-status"></p>
         </div>
+        <button id="go-full" type="button" class="ghost" hidden>Vollbild</button>
+        <p id="ios-hint" class="fine ios-hint" hidden>iPhone: Teilen <span aria-hidden="true">⬆︎</span> → „Zum Home-Bildschirm“. Von dort startet das Spiel ohne Browserleiste.</p>
         <button id="open-designer" type="button" class="ghost">Figuren-Designer</button>
         <div class="bar" aria-hidden="true"><span id="bar"></span></div>
         <p class="fine" id="fine">Möbel, Licht und Waffen werden geladen.</p>
@@ -61,6 +70,11 @@
       <label class="pause-vol">Lautstärke SFX
 <input id="sfx-volume" type="range" min="0" max="100" value="55" />
 </label>
+<p class="grade-label touch-only">Zielen-Knopf (Touch)</p>
+<div class="grade touch-only" id="aim-mode">
+        <button type="button" data-aim="toggle">Umschalten</button>
+        <button type="button" data-aim="hold">Halten</button>
+      </div>
 <label class="pause-vol touch-only">Umsehen (Touch)
 <input id="look-sens" type="range" min="40" max="250" value="100" />
 </label>
@@ -142,6 +156,10 @@
     <div id="touch" hidden>
       <div id="stick" class="stick" aria-label="Bewegen"><div id="stick-knob"></div></div>
       <div id="lookpad" aria-label="Umsehen"></div>
+      <div class="touch-top">
+        <button type="button" class="tb tb-pause" data-act="pause" aria-label="Pause / Einstellungen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+        <button type="button" class="tb tb-full" data-act="full" aria-label="Vollbild"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+      </div>
       <div class="touch-buttons">
         <button type="button" class="tb tb-fire" data-act="fire-left" aria-label="Schießen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg></button>
         <button type="button" class="tb tb-punch" data-act="fire-right" aria-label="Schlagen"><span class="tb-emoji">👊</span></button>
